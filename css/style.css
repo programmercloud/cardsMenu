@@ -1,0 +1,223 @@
+/* Set box-sizing for all elements and remove margins */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Set background color for body */
+body {
+  background: #050f10;
+}
+
+/* Set styles for the demo container */
+.demo {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 280px;
+  height: 480px;
+  margin-left: -140px;
+  margin-top: -240px;
+  background: #ffff1c;
+  border-radius: 6px;
+  color: #fff;
+}
+
+/* Set styles for the close menu button */
+.demo__close-menu {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 29px;
+  cursor: pointer;
+}
+
+/* Set styles for the close menu button's before and after pseudoelements */
+.demo__close-menu:before,
+.demo__close-menu:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 100%;
+  height: 4px;
+  background: #111;
+}
+
+/* Rotate the before pseudoelement 45 degrees */
+.demo__close-menu:before {
+  transform: rotate(45deg);
+}
+
+/* Rotate the after pseudoelement -45 degrees */
+.demo__close-menu:after {
+  transform: rotate(-45deg);
+}
+
+/* Set styles for the sections */
+.demo__section {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px 0 0 65px;
+  border-radius: inherit;
+  transition: transform 0.4s;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Set styles for the first section when it's inactive */
+.demo__section-1.inactive {
+  transform: translate3d(100%, 60px, 0);
+}
+
+/* Set styles for the second section when it's inactive */
+.demo__section-2.inactive {
+  transform: translate3d(100%, 120px, 0);
+}
+
+/* Set styles for the third section when it's inactive */
+.demo__section-3.inactive {
+  transform: translate3d(100%, 180px, 0);
+}
+
+/* Set styles for the fourth section when it's inactive */
+.demo__section-4.inactive {
+  transform: translate3d(100%, 240px, 0);
+}
+
+/* Set styles for the sections when the menu is active */
+.demo.menu-active .demo__section-1 {
+  transform: translate3d(20px, 60px, 0);
+}
+
+.demo.menu-active .demo__section-2 {
+  transform: translate3d(40px, 120px, 0);
+}
+
+.demo.menu-active .demo__section-3 {
+  transform: translate3d(60px, 180px, 0);
+}
+
+.demo.menu-active .demo__section-4 {
+  transform: translate3d(80px, 240px, 0);
+}
+
+/* Set cursor to pointer for active sections */
+.demo.menu-active .demo__section {
+  cursor: pointer;
+}
+
+/* Set background color for the first section */
+.demo__section-1 {
+  background: #282828;
+}
+
+/* Set background color for the second section */
+.demo__section-2 {
+  background: #002f79;
+}
+.demo__section-3 {
+  background: #f2f2f2;
+}
+.demo__section-3 .demo__section-heading,
+.demo__section-3 .demo__menu-btn:before {
+  color: #111;
+}
+.demo__section-4 {
+  background: #8e44ad;
+}
+.demo__section-heading {
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: transform 0.4s;
+}
+.demo.menu-active .demo__section-heading {
+  transform: translateX(-45px);
+}
+.demo__menu-btn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 28px;
+  height: 22px;
+  transition: opacity 0.2s 0.2s;
+  cursor: pointer;
+}
+.demo.menu-active .demo__menu-btn {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.demo__menu-btn:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 8px, 0 16px;
+}
+
+/* Set background color for the third section */
+.demo__section-3 {
+  background: #f2f2f2;
+}
+
+/* Set color of section heading and menu button before for section 3 */
+.demo__section-3 .demo__section-heading,
+.demo__section-3 .demo__menu-btn:before {
+  color: #111;
+}
+
+/* Styling for section 4 */
+.demo__section-4 {
+  background: #8e44ad;
+}
+
+/* Styling for section headings */
+.demo__section-heading {
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: transform 0.4s;
+}
+
+/* Move section heading when menu is active */
+.demo.menu-active .demo__section-heading {
+  transform: translateX(-45px);
+}
+
+/* Styling for menu button */
+.demo__menu-btn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 28px;
+  height: 22px;
+  transition: opacity 0.2s 0.2s;
+  cursor: pointer;
+}
+
+/* Hide menu button when menu is active */
+.demo.menu-active .demo__menu-btn {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Styling for menu button before */
+.demo__menu-btn:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 8px, 0 16px;
+}
